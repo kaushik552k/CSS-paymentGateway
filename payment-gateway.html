@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- Bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="assets/logo.png" width="30" height="30" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link d-flex flex-row" href="#">
+                <div class="nav-icon"><i class="bi bi-search"></i></div>
+                <div class="nav-text">Search</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex flex-row" href="#">
+                <div class="nav-icon"><i class="bi bi-question-circle"></i></div>
+                <div class="nav-text">Help</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex flex-row" href="#">
+                <div class="nav-icon"><i class="bi bi-person"></i></div>
+                <div class="nav-text">User</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex flex-row" href="#">
+                <div class="nav-icon"><i class="bi bi-bag"></i></div>
+                <div class="nav-text">Cart</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main section -->
+  <section class="main-section row container-fluid">
+    <div class="left-side col-lg-8">
+      <div class="address-section">
+        <div class="card w-100 rounded-0">
+          <div class="card-body ">
+            <h5 class="card-title">Select Address</h5>
+            <div class="card address-card col-lg-6 rounded-0">
+              <div class="card-body col-lg-7">
+                <h5 class="address-type">Home</h5>
+                <p class="card-text">12/b8, SV Road, Malad, Mumbai 400064</p>
+                <div class="submit-button">
+                  <input type="button" class="btn" value="DELIVER HERE">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-section">
+        <div class="col-lg-7">
+          <div class="payment-section-heading">
+            <h5 class="card-title">Payment</h5>
+          </div>
+          <div class="card-details">
+            <div>
+              <input type="number" name="card-number" placeholder="Card number" class="w-100">
+            </div>
+            <div class="d-flex flex-row">
+              <input type="number" name="validity" id="validity" placeholder="Valid through (MM/YY)" class="w-50">
+              <input type="password" name="cvv" id="cvv" placeholder="CVV" class="w-50">
+            </div>
+            <div>
+              <input type="text" name="name" id="name-on-card" placeholder="Name on card" class="w-100">
+            </div>
+          </div>
+          <div class="payment d-flex flex-row align-items-center justify-content-between">
+            <div class="pay-button">
+              <input type="button" class="btn" value="Pay Rs.500">
+            </div>
+            <div class="payment-service h-100">
+              <img src="assets/visa.webp" alt="visa">
+              <img src="assets/mastercard.png" alt="mastercard">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-side col-lg-4">
+      <div class="card bill-details-main rounded-0">
+        <div class="card-body d-flex flex-row">
+          <div>
+            <img src="assets/store_logo.jpg" width="80" height="80" alt="store_image">
+          </div>
+          <div class="store-details">
+            <h6 class="m-1">FARM FRESH STORE</h6>
+            <p class="m-1">Malad West</p>
+          </div>
+        </div>
+        <hr class="product-cart-hr">
+        <div class="products-list pb-5">
+          <div class="product d-flex flex-row justify-content-between pb-4">
+            <div class="w-40">Tomato</div>
+            <div class="d-flex flex-row w-20 justify-content-center product-quantity">
+              <div onclick="decreaseCount(this.id)" id="tomato-neg" class="product-cart-div w-30 text-center cart-functional">-</div>
+              <div id="tomato-count" class="product-cart-div w-30 text-center">1</div>
+              <div onclick="increaseCount(this.id)" id="tomato-pos" class="product-cart-div w-30 text-center cart-functional">+</div>
+            </div>
+            <div id="tomato-price" class="w-40 text-end">₹200</div>
+          </div>
+          <div class="product d-flex flex-row justify-content-between pb-4">
+            <div class="w-40">Carrot</div>
+            <div class="d-flex flex-row w-20 justify-content-center product-quantity">
+              <div onclick="decreaseCount(this.id)" id="carrot-neg" class="product-cart-div w-30 text-center cart-functional">-</div>
+              <div id="carrot-count" class="product-cart-div w-30 text-center">1</div>
+              <div onclick="increaseCount(this.id)" id="carrot-pos" class="product-cart-div w-30 text-center cart-functional">+</div>
+            </div>
+            <div id="carrot-price" class="w-40 text-end">₹150</div>
+          </div>
+          <div class="product d-flex flex-row justify-content-between pb-4">
+            <div class="w-40">Cabbage</div>
+            <div class="d-flex flex-row w-20 justify-content-center product-quantity">
+              <div onclick="decreaseCount(this.id)" id="cabbage-neg" class="product-cart-div w-30 text-center cart-functional">-</div>
+              <div id="cabbage-count" class="product-cart-div w-30 text-center">1</div>
+              <div onclick="increaseCount(this.id)" id="cabbage-pos" class="product-cart-div w-30 text-center cart-functional">+</div>
+            </div>
+            <div id="cabbage-price" class="w-40 text-end">₹100</div>
+          </div>
+        </div>
+        <div class="bill-details">
+          <div>
+            <h5>Bill Details</h5>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between">
+              <p>Item total</p>
+              <p id="total">₹450</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>Delivery</p>
+              <p id="delivery">₹50</p>
+            </div>
+            <div class="d-flex justify-content-center">***Free delivery on order above ₹1000***</div>
+          </div>
+        </div>
+        <hr class="product-cart-hr">
+        <div class="total-pay d-flex justify-content-between">
+          <div class="fw-semibold">TO PAY</div>
+          <div id="pay" class="fw-semibold">₹500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="script.js"></script>
+
+</html>
